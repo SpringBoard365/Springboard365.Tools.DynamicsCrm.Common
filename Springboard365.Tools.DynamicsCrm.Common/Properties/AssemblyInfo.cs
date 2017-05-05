@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Springboard365.Tools.DynamicsCrm.Common")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("The common project to create command line tools for Dynamics Crm.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Springboard 365 Ltd")]
 [assembly: AssemblyProduct("Springboard365.Tools.DynamicsCrm.Common")]
