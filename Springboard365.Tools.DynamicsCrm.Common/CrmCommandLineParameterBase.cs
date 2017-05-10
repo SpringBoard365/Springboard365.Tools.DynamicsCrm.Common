@@ -1,4 +1,4 @@
-﻿namespace Springboard365.DynamicsCrm.Tools.Common
+﻿namespace Springboard365.Tools.DynamicsCrm.Common
 {
     using Springboard365.Tools.CommandLine.Core;
 
