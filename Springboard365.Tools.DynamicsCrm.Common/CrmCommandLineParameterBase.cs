@@ -16,7 +16,7 @@
         [CommandLineArgument(ArgumentType.Required, "User Name", Description = "Show the user name.", Shortcut = "username")]
         public string UserName { get; set; }
 
-        [CommandLineArgument(ArgumentType.Required, "Password", Description = "Show the password.", Shortcut = "password")]
+        [CommandLineArgument(ArgumentType.Required, "Password", Description = "Show the password.", Shortcut = "pwd")]
         public string Password { get; set; }
     }
 }
