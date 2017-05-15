@@ -8,14 +8,6 @@
         protected internal CrmToolBase(CommandLineParameterBase commandLineParameterBase, string[] args)
             : base(commandLineParameterBase, args)
         {
-            var crmCommandLineParameterBase = (CrmCommandLineParameterBase)CommandLineParameterBase;
-
-            OrganizationService = new CrmConnectionInitializer().InitialiseService(
-                crmCommandLineParameterBase.ServerUrl,
-                crmCommandLineParameterBase.OrganizationName,
-                crmCommandLineParameterBase.DomainName,
-                crmCommandLineParameterBase.UserName,
-                crmCommandLineParameterBase.Password);
         }
 
         public IOrganizationService OrganizationService { get; set; }
@@ -24,6 +16,15 @@
 
         public override void RunBase()
         {
+            var crmCommandLineParameterBase = (CrmCommandLineParameterBase)CommandLineParameterBase;
+
+            OrganizationService = new CrmConnectionInitializer().InitialiseService(
+                crmCommandLineParameterBase.ServerUrl,
+                crmCommandLineParameterBase.OrganizationName,
+                crmCommandLineParameterBase.DomainName,
+                crmCommandLineParameterBase.UserName,
+                crmCommandLineParameterBase.Password);
+
             Run();
         }
     }
