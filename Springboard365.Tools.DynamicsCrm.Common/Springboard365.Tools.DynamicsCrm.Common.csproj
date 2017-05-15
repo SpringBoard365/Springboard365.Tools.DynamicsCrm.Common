@@ -52,7 +52,6 @@
     <Compile Include="CrmCommandLineParameterBase.cs" />
     <Compile Include="CrmConnectionInitializer.cs" />
     <Compile Include="CrmToolBase.cs" />
-    <Compile Include="ICrmConnectionInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

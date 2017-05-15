@@ -5,7 +5,7 @@
     using Microsoft.Xrm.Sdk;
     using Microsoft.Xrm.Sdk.Client;
 
-    public class CrmConnectionInitializer : ICrmConnectionInitializer
+    public class CrmConnectionInitializer
     {
         public IOrganizationService InitialiseService(string server, string orgName, string domain, string userName, string password)
         {
