@@ -12,6 +12,8 @@
 
         public IOrganizationService OrganizationService { get; set; }
 
+        public abstract void Initialize();
+
         public abstract void Run();
 
         public override void RunBase()
@@ -25,6 +27,7 @@
                 crmCommandLineParameterBase.UserName,
                 crmCommandLineParameterBase.Password);
 
+            Initialize();
             Run();
         }
     }
