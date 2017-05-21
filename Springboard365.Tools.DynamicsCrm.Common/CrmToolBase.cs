@@ -12,7 +12,9 @@
 
         public IOrganizationService OrganizationService { get; set; }
 
-        public abstract void Initialize();
+        public virtual void Initialize()
+        {
+        }
 
         public abstract void Run();
 
