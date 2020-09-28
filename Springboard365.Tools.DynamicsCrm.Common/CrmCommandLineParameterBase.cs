@@ -4,19 +4,19 @@
 
     public class CrmCommandLineParameterBase : CommandLineParameterBase
     {
-        [CommandLineArgument(ArgumentType.Required, "ServerUrl", Description = "Show the server url.", Shortcut = "url")]
+        [CommandLineArgument(ArgumentType.Optional, "ServerUrl", Description = "Show the server url.", Shortcut = "url")]
         public string ServerUrl { get; set; }
 
-        [CommandLineArgument(ArgumentType.Required, "OrganizationName", Description = "Show the organization name.", Shortcut = "orgname")]
+        [CommandLineArgument(ArgumentType.Optional, "OrganizationName", Description = "Show the organization name.", Shortcut = "orgname")]
         public string OrganizationName { get; set; }
 
-        [CommandLineArgument(ArgumentType.Required, "Domain", Description = "Show the domain name.", Shortcut = "d")]
+        [CommandLineArgument(ArgumentType.Optional, "Domain", Description = "Show the domain name.", Shortcut = "d")]
         public string DomainName { get; set; }
 
-        [CommandLineArgument(ArgumentType.Required, "Username", Description = "Show the user name.", Shortcut = "u")]
+        [CommandLineArgument(ArgumentType.Optional, "Username", Description = "Show the user name.", Shortcut = "u")]
         public string UserName { get; set; }
 
-        [CommandLineArgument(ArgumentType.Required, "Password", Description = "Show the password.", Shortcut = "p")]
+        [CommandLineArgument(ArgumentType.Optional, "Password", Description = "Show the password.", Shortcut = "p")]
         public string Password { get; set; }
     }
 }

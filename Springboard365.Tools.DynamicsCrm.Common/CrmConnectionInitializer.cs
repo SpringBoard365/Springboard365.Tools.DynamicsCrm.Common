@@ -1,12 +1,23 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.Common
 {
     using System;
+    using System.Configuration;
     using System.ServiceModel.Description;
     using Microsoft.Xrm.Sdk;
     using Microsoft.Xrm.Sdk.Client;
+    using Microsoft.Xrm.Tooling.Connector;
 
     public class CrmConnectionInitializer
     {
+        private const string ConnectionStringSettingName = "CrmConnection";
+
+        public IOrganizationService InitialiseService()
+        {
+            Console.Out.WriteLine($"Initialising CRM service from Connection String with name {ConnectionStringSettingName}...");
+            var connectionString = ConfigurationManager.ConnectionStrings[ConnectionStringSettingName].ConnectionString;
+            return new CrmServiceClient(connectionString);
+        }
+
         public IOrganizationService InitialiseService(string server, string orgName, string domain, string userName, string password)
         {
             Console.Out.WriteLine("Initialising CRM service...");

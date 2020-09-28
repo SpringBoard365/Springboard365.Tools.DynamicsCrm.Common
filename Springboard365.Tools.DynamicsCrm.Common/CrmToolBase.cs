@@ -1,5 +1,6 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.Common
 {
+    using System.Net;
     using Microsoft.Xrm.Sdk;
     using Springboard365.Tools.CommandLine.Core;
 
@@ -20,14 +21,23 @@
 
         public override void RunBase()
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var crmCommandLineParameterBase = (CrmCommandLineParameterBase)CommandLineParameterBase;
 
-            OrganizationService = new CrmConnectionInitializer().InitialiseService(
-                crmCommandLineParameterBase.ServerUrl,
-                crmCommandLineParameterBase.OrganizationName,
-                crmCommandLineParameterBase.DomainName,
-                crmCommandLineParameterBase.UserName,
-                crmCommandLineParameterBase.Password);
+            var allStrings = string.Join(string.Empty, crmCommandLineParameterBase.ServerUrl, crmCommandLineParameterBase.OrganizationName, crmCommandLineParameterBase.DomainName, crmCommandLineParameterBase.UserName, crmCommandLineParameterBase.Password);
+            if (string.IsNullOrWhiteSpace(allStrings))
+            {
+                OrganizationService = new CrmConnectionInitializer().InitialiseService();
+            }
+            else
+            {
+                OrganizationService = new CrmConnectionInitializer().InitialiseService(
+                    crmCommandLineParameterBase.ServerUrl,
+                    crmCommandLineParameterBase.OrganizationName,
+                    crmCommandLineParameterBase.DomainName,
+                    crmCommandLineParameterBase.UserName,
+                    crmCommandLineParameterBase.Password);
+            }
 
             Initialize();
             Run();
