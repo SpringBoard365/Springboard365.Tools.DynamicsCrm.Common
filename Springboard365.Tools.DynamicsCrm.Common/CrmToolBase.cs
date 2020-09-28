@@ -1,6 +1,7 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.Common
 {
     using System.Net;
+    using Microsoft.Crm.Sdk.Messages;
     using Microsoft.Xrm.Sdk;
     using Springboard365.Tools.CommandLine.Core;
 
@@ -38,6 +39,8 @@
                     crmCommandLineParameterBase.UserName,
                     crmCommandLineParameterBase.Password);
             }
+
+            OrganizationService.Execute(new WhoAmIRequest());
 
             Initialize();
             Run();

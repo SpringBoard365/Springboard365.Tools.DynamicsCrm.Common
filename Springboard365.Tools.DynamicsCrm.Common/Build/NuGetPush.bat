@@ -1,4 +1,4 @@
-SET packageVersion=2.0.0-alpha01
+SET packageVersion=2.0.0-alpha02
 
 NuGet.exe pack ../Springboard365.Tools.DynamicsCrm.Common.csproj -Build -symbols -Version %packageVersion%
 
