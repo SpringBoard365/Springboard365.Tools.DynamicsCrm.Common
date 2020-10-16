@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Springboard365.Tools.DynamicsCrm.Common", "Springboard365.Tools.DynamicsCrm.Common\Springboard365.Tools.DynamicsCrm.Common.csproj", "{64D1A673-2607-436B-BF09-B40986B25E83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicsCrm.Common", "src\DynamicsCrm.Common.csproj", "{64D1A673-2607-436B-BF09-B40986B25E83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{52BDE013-C947-46E2-A0D9-16FDFB029909}"
+	ProjectSection(SolutionItems) = preProject
+		Build\NuGetPush.bat = Build\NuGetPush.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {694B2AD6-E10E-4C24-B0BE-8A49EF417280}
 	EndGlobalSection
 EndGlobal
