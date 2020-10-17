@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicsCrm.Common", "src\D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{52BDE013-C947-46E2-A0D9-16FDFB029909}"
 	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+		src\DynamicsCrm.Common.nuspec = src\DynamicsCrm.Common.nuspec
 		Build\NuGetPush.bat = Build\NuGetPush.bat
 	EndProjectSection
 EndProject
