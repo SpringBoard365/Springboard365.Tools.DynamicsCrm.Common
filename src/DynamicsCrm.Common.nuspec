@@ -23,4 +23,7 @@
       </group>
     </dependencies>
   </metadata>
+  <files>
+    <file src="bin\$Configuration$\Springboard365.Tools.DynamicsCrm.Common.dll" target="lib\net462\Springboard365.Tools.DynamicsCrm.Common.dll" />
+  </files>
 </package>
