@@ -25,19 +25,14 @@
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var crmCommandLineParameterBase = (CrmCommandLineParameterBase)CommandLineParameterBase;
 
-            var allStrings = string.Join(string.Empty, crmCommandLineParameterBase.ServerUrl, crmCommandLineParameterBase.OrganizationName, crmCommandLineParameterBase.DomainName, crmCommandLineParameterBase.UserName, crmCommandLineParameterBase.Password);
-            if (string.IsNullOrWhiteSpace(allStrings))
+            if (!string.IsNullOrWhiteSpace(crmCommandLineParameterBase.ConnectionString))
             {
-                OrganizationService = new CrmConnectionInitializer().InitialiseService();
+                OrganizationService = new CrmConnectionInitializer().InitialiseService(crmCommandLineParameterBase.ConnectionString);
             }
             else
             {
-                OrganizationService = new CrmConnectionInitializer().InitialiseService(
-                    crmCommandLineParameterBase.ServerUrl,
-                    crmCommandLineParameterBase.OrganizationName,
-                    crmCommandLineParameterBase.DomainName,
-                    crmCommandLineParameterBase.UserName,
-                    crmCommandLineParameterBase.Password);
+                const string ConnectionStringSettingName = "CrmConnection";
+                OrganizationService = new CrmConnectionInitializer().InitialiseServiceFromConnectionStringSetting(ConnectionStringSettingName);
             }
 
             OrganizationService.Execute(new WhoAmIRequest());
