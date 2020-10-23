@@ -17,7 +17,7 @@
         {
             Console.Out.WriteLine($"Initialising CRM service from Connection String setting with name: '{connectionStringSettingName}'...");
             var connectionString = ConfigurationManager.ConnectionStrings[connectionStringSettingName].ConnectionString;
-
+            CrmServiceClient.MaxConnectionTimeout = new TimeSpan(0, 20, 0);
             return new CrmServiceClient(connectionString);
         }
     }
